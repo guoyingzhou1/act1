@@ -12,7 +12,7 @@ NameNode 负责管理整个分布式系统的元数据，主要包括：
  - 文件到数据库 Block 的映射关系；
 
 - Block 副本及其存储位置等管理数据；
-- DataNode 的状态监控，两者通过段时间间隔的心跳来传递管理信息和数据信息，通过这种方式的信息传递，NameNode 可以获知每个 DataNode 保存的 Block 信息、DataNode 的健康状况、命令 DataNode 启动停止等（如果发现某个 DataNode 节点故障，NameNode 会将其负责的 block 在其他 DataNode 上进行备份）。
+- DataNode 的状态监控，两者通过一段时间间隔的心跳来传递管理信息和数据信息，通过这种方式的信息传递，NameNode 可以获知每个 DataNode 保存的 Block 信息、DataNode 的健康状况、命令 DataNode 启动停止等（如果发现某个 DataNode 节点故障，NameNode 会将其负责的 block 在其他 DataNode 上进行备份）。
 
 这些数据保存在内存中，同时在磁盘保存两个元数据管理文件：fsimage 和 editlog。
 
